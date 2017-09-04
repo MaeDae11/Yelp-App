@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import './Buisness.css';
 
 
 const business = {
@@ -26,14 +27,14 @@ class Business extends Component {
                 <h2>{business.name}</h2>
                 <div className="Business-information">
                     <div className="Business-address">
-                    <p>{business.address}</p>
-                    <p>{business.city}</p>
-                    <p>{business.state}, {business.zipCode}</p>
+                        <p>{business.address}</p>
+                        <p>{business.city}</p>
+                        <p>{business.state}, {business.zipCode}</p>
                     </div>
                     <div className="Business-reviews">
-                    <h3>{business.category}</h3>
-                    <h3 className="rating">Rating: {business.rating}/5</h3>
-                    <p>Reviews: {business.reviewCount}</p>
+                        <h3>{business.category}</h3>
+                        <h3 className="rating">Rating: {business.rating}/5</h3>
+                        <p>Reviews: {business.reviewCount}</p>
                     </div>
                 </div>
             </div>
