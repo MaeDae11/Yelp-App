@@ -8,7 +8,13 @@ class BusinessList extends Component {
 
     render() {
         return(
-            <div>
+            <div className="BusinessList">
+                <Business />
+                <Business />
+                <Business />
+                <Business />
+                <Business />
+                <Business />
             </div>
         );
     };
