@@ -10,20 +10,29 @@ class BusinessList extends Component {
     }
 
     render() {
-        let namesss = this.props.businesses.map((business) => {
+        let restrauntInfo = this.props.businesses.map((business) => {
             let name = business['name'];
-            // let image = business['imgeSrc']
+            let image = business['imageSrc']
             let address = business['address'];
             let city = business['city'];
             let state = business['state'];
             let zip = business['zipCode'];
             let rating = business['rating'];
             let review = business['reviewCount']
-            return <Business address={address} name={name} city={city} zipCode={zip} city={city} state={state} rating={rating} reviewCount={review}/>
+            return <Business 
+                image={image}
+                name={name} 
+                address={address} 
+                city={city} 
+                state={state} 
+                zipCode={zip} 
+                rating={rating} 
+                reviewCount={review} 
+                />
         })
         return(
             <div className="BusinessList">
-                {namesss}
+                {restrauntInfo}
             </div>
         );
     };
