@@ -5,7 +5,9 @@ import './Business.css';
 
 // The purpose of the <Business /> component is to represent how a business (a restaurant) in Ravenous will be formatted and styled
 class Business extends Component {
-
+    constructor(props){
+        super(props);
+    }
     render(){
 
         return(
