@@ -9,12 +9,9 @@ class BusinessList extends Component {
     render() {
         return(
             <div className="BusinessList">
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
+                {this.props.businesses.map((business) => {
+                    return <Business businesses={business}/>
+                })}
             </div>
         );
     };
