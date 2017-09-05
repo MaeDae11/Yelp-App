@@ -8,11 +8,10 @@ const sortByOptions = {
     'Most Reviewed' : 'review_count'
 };
 
-let renderSortByOptions = () => {
+const renderSortByOptions = (object) => {
     return Object.keys(sortByOptions).map(sortByOption => {
-        
         let sortByOptionValue = sortByOptions[sortByOption];
-        return <li>{sortByOptionValue}</li>
+        return <li key={sortByOptionValue}>{sortByOption}</li>
     });
 };
 
@@ -23,7 +22,7 @@ class SearchBar extends Component {
             <div className="SearchBar">
                 <div className="SearchBar-sort-options">
                     <ul>
-                        {renderSortByOptions}
+                        {renderSortByOptions(sortByOptions)}
                     </ul>
                 </div>
                 <div className="SearchBar-fields">
