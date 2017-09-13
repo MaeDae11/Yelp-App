@@ -44,28 +44,25 @@ class SearchBar extends Component {
         );
     };
 
-    // _ after render because these functions are not part of the life cycle
+    // _ denotes different types of methods/functions after render because these functions are not part of the life cycle
     _renderSortByOptions = (object) => {
         return Object.keys(this.sortByOptions).map(sortByOption => {
-            let sortByOptionValue = this.sortByOptions[sortByOption];
-            return <li 
-            onClick={this._handleSortByChange(sortByOptionValue)} 
-            className={this._getSortByClass(sortByOptionValue)} 
-            key={sortByOptionValue}>{sortByOption}
+            let sortByOptionValue = this.sortByOptions[sortByOption]
+            return <li className={this._getSortByClass(sortByOptionValue)}
+                onClick={this._handleSortByChange.bind(this, sortByOptionValue)}
+                key={sortByOptionValue}>{sortByOption}
             </li>
         });
     }
     _getSortByClass = (sortByOption) => {
-        if(this.state === sortByOption){
+        if(this.state.sortBy === sortByOption){
             return 'active'
         } else {
             return ''
         };
     }
-    _handleSortByChange = (sortByOption) => {
-        this.setState((sortByOption) => {
-            sortBy: sortByOption
-        });
+    _handleSortByChange(sortByOption){
+        this.setState({sortBy: sortByOption});
     }
     _handleTermChange = (e) =>{
         this.setState({
@@ -78,11 +75,8 @@ class SearchBar extends Component {
         });
     }
     _handleSearch = (e) => {
-        this.setState({
-            // searchYelp(term, location, sortBy){
-            //     e.preventDefault();
-            // }
-        });
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        e.preventDefault();
     }
 };
 
