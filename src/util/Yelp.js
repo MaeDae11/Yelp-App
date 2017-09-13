@@ -44,9 +44,12 @@ const search = (term, location, sortBy) => {
                 zipCode: business.zip_code,
                 category: business.category,
                 rating: business.rating,
-                reviewCount: review_count
+                reviewCount: business.review_count
                 }
             ));
         }
     })
-}
+};
+
+
+export default Yelp;

@@ -20,6 +20,7 @@ class BusinessList extends Component {
             let rating = business['rating'];
             let review = business['reviewCount']
             return <Business 
+                key={business.id}
                 image={image}
                 name={name} 
                 address={address} 

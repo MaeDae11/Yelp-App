@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
+import Yelp from '../../util/Yelp.js';
 
 
 
