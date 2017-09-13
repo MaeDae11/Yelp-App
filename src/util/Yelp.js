@@ -21,8 +21,16 @@ const Yelp = {
                 console.log(accessToken)
             })
         }
-
-
     }
 };
 
+const search = (term, location, sortBy) => {
+    return Yelp.getAccessToken()
+    .then(() => {
+        return fetch(`https://api.yelp.com/v3/businesses/search?term= + ${term} + &location= + ${location} + &sort_by= + ${sortBy}`, `Bearer ${accessToken}`, {
+            headers: {
+                Authroization: `Bearer ${accessToken}`
+            }
+        });
+    }).then()
+}
