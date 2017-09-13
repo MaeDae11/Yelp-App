@@ -32,5 +32,21 @@ const search = (term, location, sortBy) => {
                 Authroization: `Bearer ${accessToken}`
             }
         });
-    }).then()
+    }).then(jsonResponse => {
+        if (jsonResponse.businesses) {
+            return jsonResponse.businesses.map(business => (
+                {
+                id: business.id,
+                imageSrc: business.image_url,
+                name: business.name,
+                address: business.address,
+                city: business.city,
+                zipCode: business.zip_code,
+                category: business.category,
+                rating: business.rating,
+                reviewCount: review_count
+                }
+            ));
+        }
+    })
 }
