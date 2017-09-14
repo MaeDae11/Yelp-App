@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Business.css';
 
-import { search } from '../../util/Yelp.js';
 
 
 // The purpose of the <Business /> component is to represent how a business (a restaurant) in Ravenous will be formatted and styled

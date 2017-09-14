@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
-import Yelp from '../../util/Yelp.js';
-
-
 
 
 
@@ -49,10 +46,12 @@ class SearchBar extends Component {
     _renderSortByOptions = (object) => {
         return Object.keys(this.sortByOptions).map(sortByOption => {
             let sortByOptionValue = this.sortByOptions[sortByOption]
-            return <li className={this._getSortByClass(sortByOptionValue)}
+            return (<li 
+                className={this._getSortByClass(sortByOptionValue)}
                 onClick={this._handleSortByChange.bind(this, sortByOptionValue)}
-                key={sortByOptionValue}>{sortByOption}
-            </li>
+                key={sortByOptionValue}>
+                {sortByOption}
+            </li>)
         });
     }
     _getSortByClass = (sortByOption) => {
