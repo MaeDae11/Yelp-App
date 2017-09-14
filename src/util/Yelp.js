@@ -13,7 +13,7 @@ const Yelp = {
                 resolve(accessToken);
             });
         } 
-        return fetch(`https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`, {
+        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`, {
             method: 'POST'
         }).then(response => {
             console.log(response)
@@ -27,19 +27,12 @@ const Yelp = {
         });
     },
     search(term, location, sortBy) {
-        return Yelp.getAccessToken().then((accessToken) => {
-            console.log(accessToken)
-            console.log(fetch(`https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
-                header: {
-                    'Authorization' : `Bearer ${accessToken}`
-                }
-            }))
-            return fetch(`https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
-                header: {
-                    'Authorization' : `Bearer ${accessToken}`
+        return  Yelp.getAccessToken().then(() => {
+            return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
                 }
             }).then(response => {
-                console.log(response);
                 if(response.ok) {
                     return response.json();
                 }
@@ -51,9 +44,10 @@ const Yelp = {
                         id: business.id,
                         imageSrc: business.image_url,
                         name: business.name,
-                        address: business.address,
-                        city: business.city,
-                        zipCode: business.zip_code,
+                        address: business.location.address1,
+                        city: business.location.city,
+                        state: business.location.state,
+                        zipCode: business.location.zip_code,
                         category: business.category,
                         rating: business.rating,
                         reviewCount: business.review_count
