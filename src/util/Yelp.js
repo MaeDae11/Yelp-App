@@ -1,7 +1,7 @@
-// const clientId = 'Q8I4AKrFPpNGxg5_-zT27Q';
-// const secret = 'Cckxx3WIopCS5tmaTjLPCNHvSNqz7WU0FFDm0tqY8sKNVNiWJORB5vn0FjT9MI2K';
-const clientId = 'FW3QGrFwOrgoRpy6oa6t9g';
-const secret = 'pjvdEe0sTsFHunbUFZhiYcLztLyW35JgIQTlEvITcLFug5IXoQTrNy1ovaWL9smx';
+const clientId = 'Q8I4AKrFPpNGxg5_-zT27Q';
+const secret = 'Cckxx3WIopCS5tmaTjLPCNHvSNqz7WU0FFDm0tqY8sKNVNiWJORB5vn0FjT9MI2K';
+// const clientId = 'FW3QGrFwOrgoRpy6oa6t9g';
+// const secret = 'pjvdEe0sTsFHunbUFZhiYcLztLyW35JgIQTlEvITcLFug5IXoQTrNy1ovaWL9smx';
 
 var accessToken = '';
 
@@ -29,7 +29,12 @@ const Yelp = {
     search(term, location, sortBy) {
         return Yelp.getAccessToken().then((accessToken) => {
             console.log(accessToken)
-            return fetch(`https://api.yelp.com/v3/businesses/search`, {
+            console.log(fetch(`https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
+                header: {
+                    'Authorization' : `Bearer ${accessToken}`
+                }
+            }))
+            return fetch(`https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
                 header: {
                     'Authorization' : `Bearer ${accessToken}`
                 }
