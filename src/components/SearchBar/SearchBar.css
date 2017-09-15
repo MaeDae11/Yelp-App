@@ -1,6 +1,6 @@
 .Error {
     font-size: 20px;
-    color: green;
+    color: #013214;
     text-align: center;
     padding: 20px;
 }
@@ -41,9 +41,8 @@
   
   .SearchBar-sort-options li.active,
   .SearchBar-sort-options li.active:hover {
-    border-bottom: 1px solid #f0c36c;
-    color: #f0c36c;
-    
+    border-bottom: 1px solid #339933;
+    color: #339933;
   }
   
   .SearchBar-fields {
@@ -74,7 +73,7 @@
   .SearchBar-submit a {
     border-radius: 4px;
     padding: .72rem 1.7rem;
-    background-color: #cca353;
+    background-color: #339933;
     border: .1px solid white;
     color: #ffffff;
     font-weight: 600;
@@ -84,11 +83,11 @@
   
   .SearchBar-submit a:hover {
     cursor: pointer;
-    background-color: #a7874b;
+    background-color: #04b976;
   }
   .SearchBar-submit a:active {
     box-shadow: 1px 1px 4px #000;
-    background-color: #644c1e;
+    background-color: #000;
   }
   
   @media only screen and (max-width: 560px) {

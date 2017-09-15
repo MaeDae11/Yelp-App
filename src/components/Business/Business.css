@@ -9,6 +9,13 @@
   .Business .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
+    box-shadow: 5px 5px 8px #000;
+  }
+  .Business .image-container:hover {
+      cursor: pointer;
+  }
+  .Business .image-container:active {
+      box-shadow: 2px 2px 4px #000;
   }
   
   .Business h2 {

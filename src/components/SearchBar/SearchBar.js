@@ -32,7 +32,7 @@ class SearchBar extends Component {
                     </ul>
                 </div>
                 <div className="SearchBar-fields">
-                    <input onChange={this._handleTermChange} placeholder="Search Businesses" />
+                    <input onChange={this._handleTermChange} placeholder="What are you in the mood for?" />
                     <input onChange={this._handleLocationChange} placeholder="Where?" />
                 </div>
                 <div onClick={this._handleSearch} className="SearchBar-submit">
