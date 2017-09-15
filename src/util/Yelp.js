@@ -1,9 +1,6 @@
-const clientId = 'Q8I4AKrFPpNGxg5_-zT27Q';
-const secret = 'Cckxx3WIopCS5tmaTjLPCNHvSNqz7WU0FFDm0tqY8sKNVNiWJORB5vn0FjT9MI2K';
-// const clientId = 'FW3QGrFwOrgoRpy6oa6t9g';
-// const secret = 'pjvdEe0sTsFHunbUFZhiYcLztLyW35JgIQTlEvITcLFug5IXoQTrNy1ovaWL9smx';
-
+import { CLIENT_ID, SECRET } from './YelpInfo.js';
 var accessToken = '';
+
 
 
 const Yelp = {
@@ -13,7 +10,7 @@ const Yelp = {
                 resolve(accessToken);
             });
         } 
-        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`, {
+        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${SECRET}`, {
             method: 'POST'
         }).then(response => {
             console.log(response)
