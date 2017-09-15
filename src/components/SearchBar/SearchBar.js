@@ -36,7 +36,7 @@ class SearchBar extends Component {
                     <input onChange={this._handleLocationChange} placeholder="Where?" />
                 </div>
                 <div onClick={this._handleSearch} className="SearchBar-submit">
-                    <a>Let's Go</a>
+                    <a>Explore!</a>
                 </div>
             </div>
         );
@@ -74,6 +74,7 @@ class SearchBar extends Component {
             location: e.target.value
         });
     }
+
     _handleSearch = (e) => {
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
         e.preventDefault();

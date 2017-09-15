@@ -1,3 +1,11 @@
+.Error {
+    font-size: 20px;
+    color: green;
+    text-align: center;
+    padding: 20px;
+}
+
+
 .SearchBar {
     display: flex;
     flex-direction: column;
@@ -35,6 +43,7 @@
   .SearchBar-sort-options li.active:hover {
     border-bottom: 1px solid #f0c36c;
     color: #f0c36c;
+    
   }
   
   .SearchBar-fields {
@@ -59,20 +68,27 @@
   
   .SearchBar-submit {
     text-align: center;
+    
   }
   
   .SearchBar-submit a {
     border-radius: 4px;
     padding: .72rem 1.7rem;
     background-color: #cca353;
+    border: .1px solid white;
     color: #ffffff;
     font-weight: 600;
     transition: background-color .5s;
+    box-shadow: 5px 5px 8px #000;
   }
   
   .SearchBar-submit a:hover {
     cursor: pointer;
     background-color: #a7874b;
+  }
+  .SearchBar-submit a:active {
+    box-shadow: 1px 1px 4px #000;
+    background-color: #644c1e;
   }
   
   @media only screen and (max-width: 560px) {
