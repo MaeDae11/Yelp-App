@@ -18,7 +18,8 @@ class BusinessList extends Component {
             let state = business['state'];
             let zip = business['zipCode'];
             let rating = business['rating'];
-            let review = business['reviewCount']
+            let review = business['reviewCount'];
+            let url = business['url'];
             return <Business 
                 key={business.id}
                 image={image}
@@ -28,7 +29,8 @@ class BusinessList extends Component {
                 state={state} 
                 zipCode={zip} 
                 rating={rating} 
-                reviewCount={review} 
+                reviewCount={review}
+                url={url}
                 />
         })
         return(

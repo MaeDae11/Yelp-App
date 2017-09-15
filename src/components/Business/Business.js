@@ -19,13 +19,14 @@ class Business extends Component {
             zipCode,
             category,
             rating,
-            reviewCount
+            reviewCount,
+            url
         } = this.props
 
         return(
             <div className="Business">
                 <div className="image-container">
-                    <img src={image} alt={name}/>
+                    <a target="_blank" rel="noopener noreferrer" href={url}><img src={image} alt={name}/></a>
                 </div>
                 <h2>{name}</h2>
                 <div className="Business-information">
