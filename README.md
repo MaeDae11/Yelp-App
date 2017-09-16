@@ -56,8 +56,8 @@ _renderSortByOptions = (object) => {
 ```
 <br />
 <h3>AJAX call to Yelp's API</h3> 
-<h4>The <em>search</em> method is call upon when the user click the button 'Explore'. From there, an accessToken is retrieved from Yelp with my clientId and secret through a POST method. If the response returns without error, the accessToken is then equated to the <em>access_token</em> within the jsonResponse.</h4>
-<h4>Now that the access token is retrieved, the term, location, and sortby are sent in a fetch POST method. This call retrieves 21 items based on the search parameters. If the response returns without error, the jsonResponse is mapped through to collected the wanted data for the application (name, address, url, etc)</h4>
+<h4>The <em>search</em> method is call upon when the user click the button 'Explore'. From there, an accessToken is retrieved from Yelp with my clientId and secret through a POST method. If the response returns without error, the accessToken is then equated to the <em>access_token</em> within the jsonResponse. If the response contains an error, an erroor response will trigger and print to the console.</h4>
+<h4>Now that the access token is retrieved, the term, location, and sortby are sent in a fetch POST method. This call retrieves 21 items based on the search parameters. If the response returns without error, the jsonResponse is mapped through to collected the wanted data for the application (name, address, url, etc).</h4>
 
 
 ``` javascript
@@ -75,7 +75,9 @@ const Yelp = {
             if(response.ok){
                 return response.json();
             }
-        }).then(jsonResponse => {
+            throw new Error('Request failed!');
+        }, networkError => console.log(networkError.message)
+        ).then(jsonResponse => {
             accessToken = jsonResponse.access_token;
             return accessToken
         });
@@ -90,7 +92,10 @@ const Yelp = {
                 if(response.ok) {
                     return response.json();
                 }
-            }).then(jsonResponse => {
+                throw new Error('Request failed!');
+                }, networkError => console.log(networkError.message)
+            ).then(jsonResponse => {
+                console.log(jsonResponse)
                 if (jsonResponse.businesses) {
                     return jsonResponse.businesses.map(business => (
                         {
@@ -112,6 +117,7 @@ const Yelp = {
         })
     }
 };
+
 
 
 
