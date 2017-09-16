@@ -1,20 +1,20 @@
-#Ravenous
+<h1>Ravenous</h1>
 
-#Application created with React to integrate Yelp API with specialized called dependant on data
+<h2>Application created with React to integrate Yelp API with specialized called dependant on data</h2>
 
-#What does Ravenous do?
+<h2>What does Ravenous do?</h2
 <p>Ravenous allows users to search types of food, or specific restaurants in a city.</p>
 <p>The search renders 21 results to the page based on their specification of 'Best Match', 'Highest Rated', or 'Most Reviewed'.</p>
 <p>From there, the user can click on the photo for more information about the restaurant</p>
 <p>The API used for this project was Yelp. The AJAX call is structured through the method of fetch using POST. This gathers data about name, address, city, state, reviews, number of reviews and image.</p>
 
-#Difficulties
+<h2>Difficulties</h2>
 <ul>
 <li>This was my first full React app. Learning to break up components, pass in props, and organize code while working with an API that I had never seen was challenging; however, after reading documentation and gaining further knowledge of React, it started to come together.</li>
 <li>AJAX calls to Yelp's API was a bit different. I was also impleneting new knowledge of fetch() and they didn't seem to have much documentation on JavaScript or this ES6 method.</li>
 </ul>
 
-#Code Snippits
+<h2>Code Snippits</h2>
 <h4>Below is part of the top search container component. Shows the layout using JSX and how multiple small functions handle each input, button, and list.</h4> 
 <h4>The <em>renderSortByOption</em> function handles the class changes of 'Best Match', 'Highest Rated', and 'Most Reviewd'. If the word is clicked on, the className becomes 'active'. This implements the CSS tied to 'active' and change the font color to indicate to the users which selection they chose. </h4>
 
@@ -125,12 +125,12 @@ const Yelp = {
 #SnapShots
 
 <h4>This is the search bar and blank area where restaurants will be rendered. The user can input their search, click explore, and restaurants will render. This also showcases the desktop version of the application.</h4>
-<img src="./mainsearchdesktop.png" width="400">
+<img src="/mainsearchdesktop.png" width="400" alt="desktop version showing search button, input boxes, and sort by options">
 <br />
 
 <h4>Below indicates the error if a user does not input a location and/or a term. The snapshot also shows the mobile version of the application</h4>
-<img src="./errormessagemobile.png" width="200">
+<img src="/errormessagemobile.png" width="200" alt="mobile version showing error message">
 <br />
 
 <h4>Finally, these are the search results. As you can see, this is where the information from the AJAX fetch GET call from Yelp's API. </h4>
-<img src="./searchresult.png" width="400">
+<img src="/searchresult.png" width="400" alt="search results appended to screen">
