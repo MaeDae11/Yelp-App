@@ -125,12 +125,12 @@ const Yelp = {
 #SnapShots
 
 <h4>This is the search bar and blank area where restaurants will be rendered. The user can input their search, click explore, and restaurants will render. This also showcases the desktop version of the application.</h4>
-<img src="/mainsearchdesktop.png" width="400" alt="desktop version showing search button, input boxes, and sort by options">
+<img src="public/mainsearchdesktop.png" width="500" alt="desktop version showing search button, input boxes, and sort by options">
 <br />
 
 <h4>Below indicates the error if a user does not input a location and/or a term. The snapshot also shows the mobile version of the application</h4>
-<img src="/errormessagemobile.png" width="200" alt="mobile version showing error message">
+<img src="public/errormessagemobile.png" width="300" alt="mobile version showing error message">
 <br />
 
 <h4>Finally, these are the search results. As you can see, this is where the information from the AJAX fetch GET call from Yelp's API. </h4>
-<img src="/searchresult.png" width="400" alt="search results appended to screen">
+<img src="public/searchresult.png" width="500" alt="search results appended to screen">
