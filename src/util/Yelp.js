@@ -13,12 +13,12 @@ const Yelp = {
         return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${SECRET}`, {
             method: 'POST'
         }).then(response => {
-            console.log(response)
             if(response.ok){
                 return response.json();
             }
-        }).then(jsonResponse => {
-            console.log(jsonResponse)
+            throw new Error('Request failed!');
+        }, networkError => console.log(networkError.message)
+        ).then(jsonResponse => {
             accessToken = jsonResponse.access_token;
             return accessToken
         });
@@ -33,7 +33,9 @@ const Yelp = {
                 if(response.ok) {
                     return response.json();
                 }
-            }).then(jsonResponse => {
+                throw new Error('Request failed!');
+                }, networkError => console.log(networkError.message)
+            ).then(jsonResponse => {
                 console.log(jsonResponse)
                 if (jsonResponse.businesses) {
                     return jsonResponse.businesses.map(business => (
