@@ -15,9 +15,8 @@
 </ul>
 
 #Code Snippits
-<br />
 <h4>Below is part of the top search container component. Shows the layout using JSX and how multiple small functions handle each input, button, and list.</h4> 
-<h4>The <em>renderSortByOption</em> function handles the class changes of 'Best Match', 'Highest Rated', and 'Most Reviewed'. If the word is clicked on, the className becomes 'active'. This implements the CSS tied to 'active' and change the font color to indicate to the users which selection they chose. </h4>
+<h4>The <em>renderSortByOption</em> function handles the class changes of 'Best Match', 'Highest Rated', and 'Most Reviewd'. If the word is clicked on, the className becomes 'active'. This implements the CSS tied to 'active' and change the font color to indicate to the users which selection they chose. </h4>
 
 
 ```javascript
